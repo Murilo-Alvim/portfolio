@@ -1,22 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  Github,
-  Network,
-  ShoppingBag,
-  Stethoscope,
-} from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 
 type Project = {
   title: string;
-  subtitle: string;
   description: string;
-  highlights: string[];
   stack: string[];
-  icon: typeof Network;
-  accent: string;
   image: string;
   repoUrl: string;
   liveUrl: string;
@@ -25,69 +15,43 @@ type Project = {
 const projects: Project[] = [
   {
     title: "ProcessMap",
-    subtitle: "Mapeamento de processos empresariais",
     description:
-      "Plataforma full-stack para mapear áreas, processos e subprocessos de uma organização em hierarquia ilimitada, com visualização interativa em fluxograma e dashboard analítico.",
-    highlights: [
-      "Hierarquia infinita de processos com algoritmo de layout próprio",
-      "Visualização em fluxograma interativo (React Flow)",
-      "Dashboard com métricas agregadas em tempo real",
-      "Validação ponta-a-ponta com Zod e transações Prisma",
-    ],
+      "Plataforma full-stack para mapeamento de processos empresariais em hierarquia ilimitada, com visualização interativa em fluxograma, dashboard analítico em tempo real e gerenciamento completo de áreas, ferramentas e responsáveis.",
     stack: [
-      "Next.js / React",
+      "Next.js",
       "TypeScript",
-      "Node.js + Express",
+      "Node.js",
       "Prisma",
       "PostgreSQL",
       "React Flow",
       "TailwindCSS",
     ],
-    icon: Network,
-    accent: "from-brand-violet to-brand-fuchsia",
     image: "/projects/processmap.png",
     repoUrl: "https://github.com/Murilo-Alvim/case-processos",
     liveUrl: "#",
   },
   {
     title: "Catálogo de Produtos",
-    subtitle: "CRUD com autenticação JWT",
     description:
-      "Aplicação full-stack para gerenciamento de catálogo de produtos com sistema de autenticação completo (cadastro, login e sessão), construída com foco em segurança e organização.",
-    highlights: [
-      "Autenticação JWT com bcrypt para hash de senhas",
-      "CRUD completo de produtos protegido por middleware",
-      "Sessão persistente via Context API + localStorage",
-      "Interceptor Axios para inclusão automática do token",
-    ],
+      "Aplicação full-stack de catálogo com sistema completo de autenticação JWT, CRUD protegido por middleware e gerenciamento de sessão persistente. Foco em segurança, organização e experiência de uso fluida.",
     stack: [
-      "React + Vite",
-      "Node.js + Express",
-      "PostgreSQL (Neon)",
+      "React",
+      "Vite.js",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
       "JWT",
-      "bcrypt",
       "TailwindCSS",
     ],
-    icon: ShoppingBag,
-    accent: "from-brand-fuchsia to-brand-cyan",
     image: "/projects/catalogo.png",
     repoUrl: "https://github.com/Murilo-Alvim/catalogo-produtos",
     liveUrl: "#",
   },
   {
     title: "Dra. Carla",
-    subtitle: "Landing page profissional",
     description:
-      "Landing page institucional para uma profissional da área da saúde, com 8 seções (hero, sobre, especialidades, serviços, depoimentos e contato) e formulário integrado por email.",
-    highlights: [
-      "Design responsivo e mobile-first",
-      "Integração com EmailJS para envio de mensagens",
-      "Componentização limpa em React Server Components",
-      "Otimização de imagens e fontes via next/image e next/font",
-    ],
-    stack: ["Next.js 14", "React", "TailwindCSS", "EmailJS"],
-    icon: Stethoscope,
-    accent: "from-brand-cyan to-brand-emerald",
+      "Landing page institucional para profissional da área da saúde, com 8 seções (hero, sobre, especialidades, serviços, depoimentos, contato), formulário integrado via EmailJS e design responsivo mobile-first.",
+    stack: ["Next.js", "React", "TailwindCSS", "EmailJS"],
     image: "/projects/dra-carla.png",
     repoUrl: "https://github.com/Murilo-Alvim/dra-carla",
     liveUrl: "#",
@@ -102,16 +66,13 @@ export default function Projetos() {
           <p className="font-mono text-sm text-brand-fuchsia mb-3">
             # projetos
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-100">
-            Coisas que eu <span className="gradient-text">construí</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-zinc-100 inline-flex flex-col items-center">
+            Projetos
+            <span className="mt-3 h-[3px] w-16 rounded-full bg-gradient-to-r from-brand-violet via-brand-fuchsia to-brand-cyan" />
           </h2>
-          <p className="mt-4 text-zinc-400 max-w-xl mx-auto">
-            Cada projeto foi pensado de ponta a ponta — modelagem, API,
-            interface e deploy.
-          </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
@@ -119,25 +80,9 @@ export default function Projetos() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: i * 0.1 }}
-              className={`glass card-hover rounded-2xl overflow-hidden flex flex-col ${
-                i === 0 ? "lg:col-span-2" : ""
-              }`}
+              className="glass card-hover rounded-2xl overflow-hidden flex flex-col"
             >
-              <div
-                className={`relative w-full overflow-hidden bg-gradient-to-br ${p.accent}`}
-                style={{ aspectRatio: i === 0 ? "21/9" : "16/10" }}
-              >
-                <div
-                  className="absolute inset-0 opacity-40"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(rgba(0,0,0,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.4) 1px, transparent 1px)",
-                    backgroundSize: "32px 32px",
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center text-white/30">
-                  <p.icon size={i === 0 ? 96 : 64} strokeWidth={1.2} />
-                </div>
+              <div className="relative w-full aspect-[16/10] overflow-hidden bg-bg-elevated">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={p.image}
@@ -149,70 +94,47 @@ export default function Projetos() {
                       "none";
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-surface/95 via-bg-surface/20 to-transparent pointer-events-none" />
               </div>
 
-              <div className="p-7 flex flex-col flex-1">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`w-10 h-10 rounded-xl bg-gradient-to-br ${p.accent} flex items-center justify-center text-white shrink-0`}
-                    >
-                      <p.icon size={18} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-zinc-100 leading-tight">
-                        {p.title}
-                      </h3>
-                      <p className="text-xs text-brand-violet font-mono mt-0.5">
-                        {p.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <a
-                      href={p.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-full border border-bg-border hover:border-brand-violet/60 flex items-center justify-center text-zinc-400 hover:text-zinc-100 transition-colors"
-                      aria-label="Repositório no GitHub"
-                    >
-                      <Github size={15} />
-                    </a>
-                    <a
-                      href={p.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-full border border-bg-border hover:border-brand-violet/60 flex items-center justify-center text-zinc-400 hover:text-zinc-100 transition-colors"
-                      aria-label="Demo ao vivo"
-                    >
-                      <ArrowUpRight size={16} />
-                    </a>
-                  </div>
-                </div>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-2xl font-bold text-zinc-100 mb-3">
+                  {p.title}
+                </h3>
 
-                <p className="text-zinc-400 leading-relaxed">{p.description}</p>
+                <p className="text-zinc-400 leading-relaxed text-sm flex-1">
+                  {p.description}
+                </p>
 
-                <ul className="mt-5 space-y-2 flex-1">
-                  {p.highlights.map((h) => (
-                    <li
-                      key={h}
-                      className="flex gap-2.5 text-sm text-zinc-300 leading-relaxed"
-                    >
-                      <span
-                        className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${p.accent} shrink-0`}
-                      />
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-6 pt-5 border-t border-bg-border/60 flex flex-wrap gap-2">
+                <div className="mt-5 flex flex-wrap gap-2">
                   {p.stack.map((tech) => (
-                    <span key={tech} className="chip">
+                    <span
+                      key={tech}
+                      className="text-xs font-medium px-3 py-1 rounded-full border border-brand-cyan/40 text-brand-cyan bg-brand-cyan/[0.04] transition-colors hover:bg-brand-cyan/10"
+                    >
                       {tech}
                     </span>
                   ))}
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-bg-border/60 flex items-center gap-4">
+                  <a
+                    href={p.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-500 hover:text-brand-cyan transition-colors"
+                    aria-label={`Repositório de ${p.title} no GitHub`}
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a
+                    href={p.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-500 hover:text-brand-cyan transition-colors"
+                    aria-label={`Demo ao vivo de ${p.title}`}
+                  >
+                    <ArrowUpRight size={20} />
+                  </a>
                 </div>
               </div>
             </motion.article>

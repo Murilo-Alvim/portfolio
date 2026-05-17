@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Layers, Rocket } from "lucide-react";
+import { GraduationCap, Briefcase, Sparkles } from "lucide-react";
 
 const stats = [
   {
@@ -10,14 +10,14 @@ const stats = [
     label: "Sistemas de Informação · UNISANTA",
   },
   {
-    icon: Layers,
-    value: "Full-stack",
-    label: "Web, APIs, banco e desktop (.NET)",
+    icon: Briefcase,
+    value: "Jovem Aprendiz",
+    label: "Hospital Sírio-Libanês",
   },
   {
-    icon: Rocket,
-    value: "Foco em produto",
-    label: "UX, performance e código limpo",
+    icon: Sparkles,
+    value: "Mindset",
+    label: "Curiosidade, colaboração e foco em entregar valor",
   },
 ];
 
@@ -34,40 +34,86 @@ export default function Sobre() {
         >
           <div className="lg:col-span-4">
             <p className="font-mono text-sm text-brand-fuchsia mb-3">
-              # sobre
+              # sobre mim
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-100 leading-tight">
-              Pronto para entregar <br />
-              <span className="gradient-text">software de verdade</span>.
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-100 leading-tight inline-flex flex-col">
+              Sobre Mim
+              <span className="mt-3 h-[3px] w-16 rounded-full bg-gradient-to-r from-brand-violet via-brand-fuchsia to-brand-cyan" />
             </h2>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="mt-8 relative w-56 h-56 sm:w-64 sm:h-64"
+            >
+              <div className="absolute -inset-3 rounded-full bg-brand-violet/25 blur-2xl" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/murilo.png"
+                alt="Murilo Alvim"
+                className="relative w-full h-full object-cover rounded-full ring-4 ring-brand-violet shadow-[0_0_40px_rgba(139,92,246,0.45)]"
+                onError={(e) => {
+                  const el = e.currentTarget as HTMLImageElement;
+                  el.style.display = "none";
+                  el.parentElement?.classList.add(
+                    "before:content-['Adicione_public/murilo.png']",
+                    "before:absolute",
+                    "before:inset-0",
+                    "before:rounded-full",
+                    "before:bg-bg-elevated",
+                    "before:ring-4",
+                    "before:ring-brand-violet/40",
+                    "before:flex",
+                    "before:items-center",
+                    "before:justify-center",
+                    "before:text-xs",
+                    "before:text-zinc-500",
+                    "before:text-center",
+                    "before:px-4"
+                  );
+                }}
+              />
+            </motion.div>
           </div>
 
           <div className="lg:col-span-8 space-y-5 text-zinc-300 text-base sm:text-lg leading-relaxed">
             <p>
               Sou <span className="text-zinc-100 font-medium">Murilo Alvim</span>
-              , desenvolvedor full-stack e estudante do{" "}
+              , desenvolvedor em formação e estudante do{" "}
               <span className="text-zinc-100 font-medium">6º período</span> de
               Sistemas de Informação na{" "}
               <span className="text-zinc-100 font-medium">
                 UNISANTA — Universidade Santa Cecília
               </span>
-              .
+              . Atuo como{" "}
+              <span className="text-zinc-100 font-medium">
+                Jovem Aprendiz no Hospital Sírio-Libanês
+              </span>
+              , uma das instituições de saúde mais reconhecidas do país, onde
+              vivencio diariamente um ambiente corporativo exigente, dinâmico e
+              que demanda postura profissional desde o primeiro dia.
             </p>
+
             <p>
-              Posso atuar em todo o ciclo de uma aplicação: modelar o banco,
-              construir APIs REST, desenvolver interfaces responsivas e
-              colocar tudo em produção. Trabalho confortavelmente com{" "}
-              <span className="text-brand-violet">TypeScript / JavaScript</span>{" "}
-              no front e back, com{" "}
-              <span className="text-brand-fuchsia">C# / .NET</span> em
-              aplicações desktop e backend, e com{" "}
-              <span className="text-brand-cyan">SQL</span> em bancos
-              relacionais.
+              Encaro cada projeto como uma oportunidade de aprender algo novo e
+              entregar valor de verdade. Gosto de entender o problema antes de
+              partir para a solução, prezo por organização, clareza e atenção
+              ao detalhe — porque acredito que escolhas pequenas se acumulam e
+              definem a qualidade do resultado final. Valorizo decisões bem
+              pensadas, processos estruturados e o cuidado em comunicar o que é
+              feito.
             </p>
+
             <p>
-              Estou em busca da minha primeira oportunidade como desenvolvedor
-              para somar com um time, aprender com pessoas mais experientes e
-              entregar valor desde o primeiro dia.
+              Sou comunicativo, colaborativo e movido por curiosidade. Acredito
+              que bons produtos nascem do diálogo entre quem constrói, quem
+              usa e quem decide, por isso prezo trabalho em equipe e troca
+              constante de feedback. Tenho facilidade para me adaptar a novos
+              contextos, busco aprender com pessoas mais experientes e estou
+              pronto para contribuir com energia, comprometimento e visão de
+              futuro desde o primeiro dia.
             </p>
 
             <div className="grid sm:grid-cols-3 gap-4 pt-6">

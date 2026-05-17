@@ -26,28 +26,33 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
-          className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]"
+          className="font-bold tracking-tight leading-[1.05]"
         >
-          <span className="block text-zinc-100">Olá, eu sou</span>
-          <span className="block gradient-text mt-2">Murilo Alvim</span>
+          <span className="block text-zinc-400 text-2xl sm:text-3xl font-medium">
+            Olá, eu sou
+          </span>
+          <span className="block gradient-text mt-3 text-5xl sm:text-7xl lg:text-8xl">
+            Murilo Alvim
+          </span>
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mt-5 text-xl sm:text-2xl text-zinc-300 font-light tracking-wide"
+        >
+          Desenvolvedor <span className="font-semibold">Full Stack</span>
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-6 text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-6 text-base sm:text-lg text-zinc-400 max-w-xl mx-auto leading-relaxed"
         >
-          Desenvolvedor{" "}
-          <span className="text-zinc-100 font-medium">full-stack</span> e
-          estudante de{" "}
-          <span className="text-zinc-100 font-medium">
-            Sistemas de Informação
-          </span>
-          . Construo soluções ponta a ponta com{" "}
-          <span className="text-brand-violet">TypeScript</span>,{" "}
-          <span className="text-brand-fuchsia">Node.js</span>,{" "}
-          <span className="text-brand-cyan">.NET</span> e bancos relacionais.
+          Apaixonado por transformar ideias em produtos digitais com propósito,
+          qualidade e impacto real.
         </motion.p>
 
         <motion.div
