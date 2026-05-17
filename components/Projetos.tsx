@@ -28,7 +28,7 @@ const projects: Project[] = [
     ],
     image: "/projects/processmap.png",
     repoUrl: "https://github.com/Murilo-Alvim/case-processos",
-    liveUrl: "#",
+    liveUrl: "https://case-processos.vercel.app/",
   },
   {
     title: "Catálogo de Produtos",
@@ -45,7 +45,7 @@ const projects: Project[] = [
     ],
     image: "/projects/catalogo.png",
     repoUrl: "https://github.com/Murilo-Alvim/catalogo-produtos",
-    liveUrl: "#",
+    liveUrl: "https://catalogo-produtos-flame.vercel.app/",
   },
   {
     title: "Dra. Carla",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     stack: ["Next.js", "React", "TailwindCSS", "EmailJS"],
     image: "/projects/dra-carla.png",
     repoUrl: "https://github.com/Murilo-Alvim/dra-carla",
-    liveUrl: "#",
+    liveUrl: "https://dra-carla.vercel.app/",
   },
 ];
 
