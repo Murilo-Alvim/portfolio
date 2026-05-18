@@ -13,8 +13,6 @@ const groups = [
       "JavaScript",
       "C# / .NET",
       "SQL",
-      "HTML",
-      "CSS",
     ],
   },
   {
