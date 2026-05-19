@@ -157,13 +157,28 @@ export default function Projetos() {
           className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-3 -mx-6 px-6 md:-mx-10 md:px-10 lg:-mx-16 lg:px-16 touch-pan-x overscroll-x-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {projects.map((p, i) => (
-            <motion.article
+            <div
               key={p.title}
+              onMouseMove={(e) => {
+                const el = e.currentTarget;
+                const rect = el.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                el.style.setProperty("--rx", `${y * -5}deg`);
+                el.style.setProperty("--ry", `${x * 5}deg`);
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.setProperty("--rx", "0deg");
+                e.currentTarget.style.setProperty("--ry", "0deg");
+              }}
+              className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] [transform:perspective(1100px)_rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))] transition-transform duration-200 ease-out will-change-transform"
+            >
+            <motion.article
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: i * 0.08 }}
-              className="snap-start shrink-0 w-[85%] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass card-hover rounded-2xl overflow-hidden flex flex-col"
+              className="glass card-hover rounded-2xl overflow-hidden flex flex-col h-full"
             >
               <div className="relative w-full aspect-[16/10] overflow-hidden bg-bg-elevated">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -224,6 +239,7 @@ export default function Projetos() {
                 </div>
               </div>
             </motion.article>
+            </div>
           ))}
         </div>
 

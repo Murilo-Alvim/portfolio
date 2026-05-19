@@ -13,12 +13,35 @@ import { useLanguage } from "@/lib/i18n";
 export default function Hero() {
   const { t } = useLanguage();
 
+  const handleMove = (e: React.MouseEvent<HTMLElement>) => {
+    const el = e.currentTarget;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+    el.style.setProperty("--my", `${e.clientY - rect.top}px`);
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
+    <section
+      onMouseMove={handleMove}
+      className="group relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16"
+    >
       <div className="absolute inset-0 bg-grid pointer-events-none" />
       <div className="glow-orb w-[500px] h-[500px] bg-brand-violet/40 -top-40 -left-40" />
       <div className="glow-orb w-[450px] h-[450px] bg-brand-fuchsia/30 top-20 -right-32" />
       <div className="glow-orb w-[400px] h-[400px] bg-brand-cyan/25 bottom-0 left-1/3" />
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute hidden md:block w-[600px] h-[600px] rounded-full opacity-0 group-hover:opacity-100 transition-[opacity,left,top] duration-300 ease-out"
+        style={{
+          left: "var(--mx, -50%)",
+          top: "var(--my, -50%)",
+          transform: "translate(-50%, -50%)",
+          background:
+            "radial-gradient(circle, rgba(217,70,239,0.20), rgba(139,92,246,0.10) 35%, transparent 65%)",
+          filter: "blur(20px)",
+        }}
+      />
 
       <div className="container-narrow relative z-10 px-6 md:px-10 lg:px-16 text-center">
         <motion.div
