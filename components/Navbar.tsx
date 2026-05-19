@@ -1,19 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
-
-const links = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#competencias", label: "Competências" },
-  { href: "#experiencia", label: "Experiência" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#contato", label: "Contato" },
-];
+import { Menu, X, Languages } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { lang, toggle, t } = useLanguage();
+
+  const links = [
+    { href: "#sobre", label: t.nav.sobre },
+    { href: "#competencias", label: t.nav.competencias },
+    { href: "#experiencia", label: t.nav.experiencia },
+    { href: "#projetos", label: t.nav.projetos },
+    { href: "#contato", label: t.nav.contato },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -21,6 +23,23 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const LangButton = ({ className = "" }: { className?: string }) => (
+    <button
+      onClick={toggle}
+      aria-label={t.nav.langToggleAria}
+      className={`inline-flex items-center gap-1.5 h-9 px-3 rounded-full border border-bg-border/70 bg-bg-elevated/40 text-xs font-mono uppercase tracking-wider text-zinc-300 hover:text-zinc-100 hover:border-brand-violet/60 transition-colors ${className}`}
+    >
+      <Languages size={14} className="text-brand-fuchsia" />
+      <span className={lang === "pt" ? "text-zinc-100" : "text-zinc-500"}>
+        PT
+      </span>
+      <span className="text-zinc-600">/</span>
+      <span className={lang === "en" ? "text-zinc-100" : "text-zinc-500"}>
+        EN
+      </span>
+    </button>
+  );
 
   return (
     <header
@@ -56,17 +75,23 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a href="#contato" className="hidden md:inline-flex btn-primary text-sm">
-          Vamos conversar
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <LangButton />
+          <a href="#contato" className="btn-primary text-sm">
+            {t.nav.cta}
+          </a>
+        </div>
 
-        <button
-          className="md:hidden text-zinc-200 p-2"
-          onClick={() => setOpen((o) => !o)}
-          aria-label="Menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex md:hidden items-center gap-2">
+          <LangButton />
+          <button
+            className="text-zinc-200 p-2"
+            onClick={() => setOpen((o) => !o)}
+            aria-label={t.nav.menu}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -88,7 +113,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="btn-primary text-sm w-fit"
             >
-              Vamos conversar
+              {t.nav.cta}
             </a>
           </ul>
         </div>

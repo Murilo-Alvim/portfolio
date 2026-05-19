@@ -2,26 +2,15 @@
 
 import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Sparkles } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
-const stats = [
-  {
-    icon: GraduationCap,
-    value: "6º período",
-    label: "Sistemas de Informação · UNISANTA",
-  },
-  {
-    icon: Briefcase,
-    value: "Jovem Aprendiz",
-    label: "Hospital Sírio-Libanês",
-  },
-  {
-    icon: Sparkles,
-    value: "Mindset",
-    label: "Curiosidade, colaboração e foco em entregar valor",
-  },
-];
+const icons = [GraduationCap, Briefcase, Sparkles];
 
 export default function Sobre() {
+  const { lang, t } = useLanguage();
+
+  const stats = t.sobre.stats.map((s, i) => ({ ...s, icon: icons[i] }));
+
   return (
     <section id="sobre" className="section-padding relative">
       <div className="container-narrow">
@@ -34,10 +23,10 @@ export default function Sobre() {
         >
           <div className="lg:col-span-4">
             <p className="font-mono text-sm text-brand-fuchsia mb-3">
-              # sobre mim
+              {t.sobre.tag}
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-zinc-100 leading-tight inline-flex flex-col">
-              Sobre Mim
+              {t.sobre.title}
               <span className="mt-3 h-[3px] w-16 rounded-full bg-gradient-to-r from-brand-violet via-brand-fuchsia to-brand-cyan" />
             </h2>
 
@@ -79,42 +68,97 @@ export default function Sobre() {
           </div>
 
           <div className="lg:col-span-8 space-y-5 text-zinc-300 text-base sm:text-lg leading-relaxed">
-            <p>
-              Sou <span className="text-zinc-100 font-medium">Murilo Alvim</span>
-              , desenvolvedor em formação e estudante do{" "}
-              <span className="text-zinc-100 font-medium">6º período</span> de
-              Sistemas de Informação na{" "}
-              <span className="text-zinc-100 font-medium">
-                UNISANTA — Universidade Santa Cecília
-              </span>
-              . Atuo como{" "}
-              <span className="text-zinc-100 font-medium">
-                Jovem Aprendiz no Hospital Sírio-Libanês
-              </span>
-              , uma das instituições de saúde mais reconhecidas do país, onde
-              vivencio diariamente um ambiente corporativo exigente, dinâmico e
-              que demanda postura profissional desde o primeiro dia.
-            </p>
+            {lang === "pt" ? (
+              <>
+                <p>
+                  Sou{" "}
+                  <span className="text-zinc-100 font-medium">
+                    Murilo Alvim
+                  </span>
+                  , desenvolvedor em formação e estudante do{" "}
+                  <span className="text-zinc-100 font-medium">
+                    6º período
+                  </span>{" "}
+                  de Sistemas de Informação na{" "}
+                  <span className="text-zinc-100 font-medium">
+                    UNISANTA — Universidade Santa Cecília
+                  </span>
+                  . Atuo como{" "}
+                  <span className="text-zinc-100 font-medium">
+                    Jovem Aprendiz no Hospital Sírio-Libanês
+                  </span>
+                  , uma das instituições de saúde mais reconhecidas do país,
+                  onde vivencio diariamente um ambiente corporativo exigente,
+                  dinâmico e que demanda postura profissional desde o primeiro
+                  dia.
+                </p>
 
-            <p>
-              Encaro cada projeto como uma oportunidade de aprender algo novo e
-              entregar valor de verdade. Gosto de entender o problema antes de
-              partir para a solução, prezo por organização, clareza e atenção
-              ao detalhe — porque acredito que escolhas pequenas se acumulam e
-              definem a qualidade do resultado final. Valorizo decisões bem
-              pensadas, processos estruturados e o cuidado em comunicar o que é
-              feito.
-            </p>
+                <p>
+                  Encaro cada projeto como uma oportunidade de aprender algo
+                  novo e entregar valor de verdade. Gosto de entender o
+                  problema antes de partir para a solução, prezo por
+                  organização, clareza e atenção ao detalhe — porque acredito
+                  que escolhas pequenas se acumulam e definem a qualidade do
+                  resultado final. Valorizo decisões bem pensadas, processos
+                  estruturados e o cuidado em comunicar o que é feito.
+                </p>
 
-            <p>
-              Sou comunicativo, colaborativo e movido por curiosidade. Acredito
-              que bons produtos nascem do diálogo entre quem constrói, quem
-              usa e quem decide, por isso prezo trabalho em equipe e troca
-              constante de feedback. Tenho facilidade para me adaptar a novos
-              contextos, busco aprender com pessoas mais experientes e estou
-              pronto para contribuir com energia, comprometimento e visão de
-              futuro desde o primeiro dia.
-            </p>
+                <p>
+                  Sou comunicativo, colaborativo e movido por curiosidade.
+                  Acredito que bons produtos nascem do diálogo entre quem
+                  constrói, quem usa e quem decide, por isso prezo trabalho em
+                  equipe e troca constante de feedback. Tenho facilidade para
+                  me adaptar a novos contextos, busco aprender com pessoas
+                  mais experientes e estou pronto para contribuir com energia,
+                  comprometimento e visão de futuro desde o primeiro dia.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  I'm{" "}
+                  <span className="text-zinc-100 font-medium">
+                    Murilo Alvim
+                  </span>
+                  , a developer in training and a{" "}
+                  <span className="text-zinc-100 font-medium">
+                    6th-semester
+                  </span>{" "}
+                  Information Systems student at{" "}
+                  <span className="text-zinc-100 font-medium">
+                    UNISANTA — Universidade Santa Cecília
+                  </span>
+                  . I work as a{" "}
+                  <span className="text-zinc-100 font-medium">
+                    Young Apprentice at Hospital Sírio-Libanês
+                  </span>
+                  , one of the most respected healthcare institutions in the
+                  country, where I experience daily a demanding, dynamic
+                  corporate environment that calls for professionalism from
+                  day one.
+                </p>
+
+                <p>
+                  I treat every project as a chance to learn something new and
+                  deliver real value. I like to understand the problem before
+                  jumping to the solution, and I care about organization,
+                  clarity and attention to detail — because I believe small
+                  choices add up and define the quality of the final result.
+                  I value well-thought-out decisions, structured processes,
+                  and clearly communicating what's being done.
+                </p>
+
+                <p>
+                  I'm communicative, collaborative and driven by curiosity. I
+                  believe great products come from the dialogue between those
+                  who build, those who use and those who decide, which is why
+                  I value teamwork and constant feedback. I adapt easily to
+                  new contexts, learn from more experienced people, and I'm
+                  ready to contribute with energy, commitment and a
+                  forward-looking mindset from day one.
+                </p>
+              </>
+            )}
 
             <div className="grid sm:grid-cols-3 gap-4 pt-6">
               {stats.map((s, i) => (
@@ -126,7 +170,9 @@ export default function Sobre() {
                   transition={{ duration: 0.5, delay: 0.1 * i }}
                   className="glass card-hover rounded-2xl p-5"
                 >
-                  <s.icon className="text-brand-violet mb-3" size={22} />
+                  {s.icon ? (
+                    <s.icon className="text-brand-violet mb-3" size={22} />
+                  ) : null}
                   <div className="text-zinc-100 font-semibold">{s.value}</div>
                   <div className="text-xs text-zinc-500 mt-1">{s.label}</div>
                 </motion.div>

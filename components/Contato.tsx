@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 const channels = [
   {
@@ -25,6 +26,8 @@ const channels = [
 ];
 
 export default function Contato() {
+  const { t } = useLanguage();
+
   return (
     <section id="contato" className="section-padding relative">
       <div className="container-narrow">
@@ -45,15 +48,14 @@ export default function Contato() {
 
           <div className="relative">
             <p className="font-mono text-sm text-brand-fuchsia mb-3">
-              # contato
+              {t.contato.tag}
             </p>
             <h2 className="text-3xl sm:text-5xl font-bold text-zinc-100 leading-tight">
-              Vamos construir algo <br />
-              <span className="gradient-text">incrível juntos?</span>
+              {t.contato.titleA} <br />
+              <span className="gradient-text">{t.contato.titleB}</span>
             </h2>
             <p className="mt-5 text-zinc-300 max-w-xl mx-auto text-base sm:text-lg">
-              Estou aberto a oportunidades, freelas e qualquer conversa boa
-              sobre tecnologia. Me chama em qualquer canal abaixo.
+              {t.contato.subtitle}
             </p>
 
             <div className="mt-10 grid sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
@@ -75,7 +77,7 @@ export default function Contato() {
                     {c.value}
                   </div>
                   <div className="mt-3 inline-flex items-center gap-1 text-xs text-brand-cyan opacity-0 group-hover:opacity-100 transition-opacity">
-                    abrir <ArrowRight size={12} />
+                    {t.contato.open} <ArrowRight size={12} />
                   </div>
                 </a>
               ))}
@@ -85,7 +87,7 @@ export default function Contato() {
               href="mailto:muriloalvim16@gmail.com"
               className="btn-primary mt-10"
             >
-              Enviar email <ArrowRight size={16} />
+              {t.contato.send} <ArrowRight size={16} />
             </a>
           </div>
         </motion.div>

@@ -2,42 +2,22 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, CalendarDays } from "lucide-react";
-
-type Job = {
-  role: string;
-  company: string;
-  location: string;
-  period: string;
-  description: string;
-  highlights: string[];
-};
-
-const jobs: Job[] = [
-  {
-    role: "Jovem Aprendiz",
-    company: "Hospital Sírio-Libanês",
-    location: "São Paulo, SP",
-    period: "Atual",
-    description:
-      "Atuando em uma das instituições de saúde mais reconhecidas do Brasil, desenvolvendo competências profissionais e contribuindo com rotinas administrativas e operacionais.",
-    highlights: [
-      "Aprendizado em ambiente corporativo de alta complexidade",
-      "Desenvolvimento de habilidades de comunicação e trabalho em equipe",
-      "Vivência prática em processos organizacionais",
-    ],
-  },
-];
+import { useLanguage } from "@/lib/i18n";
 
 export default function Experiencia() {
+  const { t } = useLanguage();
+  const jobs = t.experiencia.jobs;
+
   return (
     <section id="experiencia" className="section-padding relative">
       <div className="container-narrow">
         <div className="text-center mb-14">
           <p className="font-mono text-sm text-brand-fuchsia mb-3">
-            # experiência
+            {t.experiencia.tag}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-100">
-            Trajetória <span className="gradient-text">profissional</span>
+            {t.experiencia.titleA}{" "}
+            <span className="gradient-text">{t.experiencia.titleB}</span>
           </h2>
         </div>
 

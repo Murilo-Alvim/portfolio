@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Sparkles } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
       <div className="absolute inset-0 bg-grid pointer-events-none" />
@@ -19,7 +22,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 chip mb-8"
         >
           <Sparkles size={14} className="text-brand-fuchsia" />
-          <span>Disponível para novas oportunidades</span>
+          <span>{t.hero.available}</span>
         </motion.div>
 
         <motion.h1
@@ -29,7 +32,7 @@ export default function Hero() {
           className="font-bold tracking-tight leading-[1.05]"
         >
           <span className="block text-zinc-400 text-2xl sm:text-3xl font-medium">
-            Olá, eu sou
+            {t.hero.greeting}
           </span>
           <span className="block gradient-text mt-3 text-5xl sm:text-7xl lg:text-8xl">
             Murilo Alvim
@@ -42,7 +45,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mt-5 text-xl sm:text-2xl text-zinc-300 font-light tracking-wide"
         >
-          Desenvolvedor <span className="font-semibold">Full Stack</span>
+          {t.hero.role}{" "}
+          <span className="font-semibold">{t.hero.roleHighlight}</span>
         </motion.p>
 
         <motion.p
@@ -51,8 +55,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-6 text-base sm:text-lg text-zinc-400 max-w-xl mx-auto leading-relaxed"
         >
-          Apaixonado por transformar ideias em produtos digitais com propósito,
-          qualidade e impacto real.
+          {t.hero.tagline}
         </motion.p>
 
         <motion.div
@@ -62,10 +65,10 @@ export default function Hero() {
           className="mt-10 flex flex-wrap items-center justify-center gap-3"
         >
           <a href="#projetos" className="btn-primary">
-            Ver projetos <ArrowRight size={16} />
+            {t.hero.ctaProjects} <ArrowRight size={16} />
           </a>
           <a href="#contato" className="btn-ghost">
-            Entrar em contato
+            {t.hero.ctaContact}
           </a>
           <div className="flex items-center gap-2 ml-2">
             <a
@@ -97,7 +100,7 @@ export default function Hero() {
         >
           <div className="flex flex-col items-center gap-2 text-zinc-500 text-xs">
             <span className="font-mono uppercase tracking-widest">
-              role para ver mais
+              {t.hero.scroll}
             </span>
             <div className="w-px h-12 bg-gradient-to-b from-brand-violet/60 to-transparent" />
           </div>

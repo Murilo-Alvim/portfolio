@@ -2,71 +2,38 @@
 
 import { motion } from "framer-motion";
 import { Code2, Boxes, Database, Cog } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
-const groups = [
-  {
-    title: "Linguagens",
-    icon: Code2,
-    color: "from-brand-violet to-brand-fuchsia",
-    items: [
-      "TypeScript",
-      "JavaScript",
-      "C# / .NET",
-      "SQL",
-    ],
-  },
-  {
-    title: "Frameworks & Bibliotecas",
-    icon: Boxes,
-    color: "from-brand-fuchsia to-brand-cyan",
-    items: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "Express",
-      "ASP.NET",
-      "Prisma",
-      "TailwindCSS",
-      "TanStack Query",
-    ],
-  },
-  {
-    title: "Banco & Infra",
-    icon: Database,
-    color: "from-brand-cyan to-brand-emerald",
-    items: ["PostgreSQL", "Neon", "REST APIs", "JWT", "Vercel", "Render", "Git", "GitHub"],
-  },
-  {
-    title: "Práticas",
-    icon: Cog,
-    color: "from-brand-violet to-brand-cyan",
-    items: [
-      "Clean Code",
-      "Tipagem estrita",
-      "Validação ponta-a-ponta",
-      "Componentização",
-      "Versionamento Git",
-      "Acessibilidade",
-    ],
-  },
+const meta = [
+  { icon: Code2, color: "from-brand-violet to-brand-fuchsia" },
+  { icon: Boxes, color: "from-brand-fuchsia to-brand-cyan" },
+  { icon: Database, color: "from-brand-cyan to-brand-emerald" },
+  { icon: Cog, color: "from-brand-violet to-brand-cyan" },
 ];
 
 export default function Competencias() {
+  const { t } = useLanguage();
+
+  const groups = t.competencias.groups.map((g, i) => ({
+    ...g,
+    icon: meta[i].icon,
+    color: meta[i].color,
+  }));
+
   return (
     <section id="competencias" className="section-padding relative">
       <div className="absolute inset-0 bg-radial-glow opacity-40 pointer-events-none" />
       <div className="container-narrow relative">
         <div className="text-center mb-14">
           <p className="font-mono text-sm text-brand-fuchsia mb-3">
-            # competências
+            {t.competencias.tag}
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-zinc-100">
-            O que eu trago para a{" "}
-            <span className="gradient-text">mesa</span>
+            {t.competencias.titleA}{" "}
+            <span className="gradient-text">{t.competencias.titleB}</span>
           </h2>
           <p className="mt-4 text-zinc-400 max-w-xl mx-auto">
-            Linguagens, frameworks e práticas que uso para construir e entregar
-            software de qualidade.
+            {t.competencias.subtitle}
           </p>
         </div>
 

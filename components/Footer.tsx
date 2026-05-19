@@ -1,13 +1,17 @@
+"use client";
+
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="border-t border-bg-border/60 py-10 px-6">
       <div className="container-narrow flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-zinc-500">
-          © {new Date().getFullYear()} Murilo Alvim · Construído com Next.js e
-          muito{" "}
-          <span className="text-brand-fuchsia" aria-label="café">
+          © {new Date().getFullYear()} Murilo Alvim · {t.footer.builtWith}{" "}
+          <span className="text-brand-fuchsia" aria-label={t.footer.coffeeAria}>
             ☕
           </span>
         </p>
