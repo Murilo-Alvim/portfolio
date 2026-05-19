@@ -36,7 +36,12 @@ type Dict = {
   sobre: {
     tag: string;
     title: string;
-    stats: { value: string; label: string }[];
+    stats: {
+      value: string;
+      label: string;
+      tag?: string;
+      meta?: string;
+    }[];
   };
   competencias: {
     tag: string;
@@ -111,8 +116,17 @@ const pt: Dict = {
     tag: "# sobre mim",
     title: "Sobre Mim",
     stats: [
-      { value: "6º período", label: "Sistemas de Informação · UNISANTA" },
-      { value: "Jovem Aprendiz", label: "Hospital Sírio-Libanês" },
+      {
+        tag: "Formação",
+        value: "Bacharelado em Sistemas de Informação",
+        label: "Universidade Santa Cecília (UNISANTA)",
+        meta: "2024-Cursando · Previsão: Dez/2027 · 6º semestre",
+      },
+      {
+        value: "Jovem Aprendiz",
+        label: "Hospital Sírio-Libanês",
+        meta: "09/2025 · Atual",
+      },
       {
         value: "Mindset",
         label: "Curiosidade, colaboração e foco em entregar valor",
@@ -264,8 +278,17 @@ const en: Dict = {
     tag: "# about me",
     title: "About Me",
     stats: [
-      { value: "6th semester", label: "Information Systems · UNISANTA" },
-      { value: "Young Apprentice", label: "Hospital Sírio-Libanês" },
+      {
+        tag: "Education",
+        value: "Bachelor's in Information Systems",
+        label: "Universidade Santa Cecília (UNISANTA)",
+        meta: "2024-Present · Expected: Dec/2027 · 6th semester",
+      },
+      {
+        value: "Young Apprentice",
+        label: "Hospital Sírio-Libanês",
+        meta: "09/2025 · Present",
+      },
       {
         value: "Mindset",
         label: "Curiosity, collaboration and focus on delivering value",

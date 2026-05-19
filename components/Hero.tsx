@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  Github,
+  Linkedin,
+  Sparkles,
+} from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
 export default function Hero() {
@@ -98,12 +104,23 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mt-20 flex justify-center"
         >
-          <div className="flex flex-col items-center gap-2 text-zinc-500 text-xs">
-            <span className="font-mono uppercase tracking-widest">
-              {t.hero.scroll}
-            </span>
-            <div className="w-px h-12 bg-gradient-to-b from-brand-violet/60 to-transparent" />
-          </div>
+          <a
+            href="#sobre"
+            aria-label={t.hero.scroll}
+            className="group inline-flex items-center justify-center w-12 h-12 rounded-full text-brand-violet hover:text-brand-fuchsia transition-colors"
+          >
+            <motion.span
+              animate={{ y: [0, 10, 0] }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="drop-shadow-[0_0_12px_rgba(139,92,246,0.55)] group-hover:drop-shadow-[0_0_14px_rgba(217,70,239,0.6)] transition-[filter]"
+            >
+              <ChevronDown size={34} strokeWidth={2.25} />
+            </motion.span>
+          </a>
         </motion.div>
       </div>
     </section>

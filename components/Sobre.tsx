@@ -173,8 +173,20 @@ export default function Sobre() {
                   {s.icon ? (
                     <s.icon className="text-brand-violet mb-3" size={22} />
                   ) : null}
-                  <div className="text-zinc-100 font-semibold">{s.value}</div>
+                  {s.tag ? (
+                    <div className="text-[10px] font-mono uppercase tracking-wider text-brand-fuchsia/90 mb-2">
+                      {s.tag}
+                    </div>
+                  ) : null}
+                  <div className="text-zinc-100 font-semibold leading-snug">
+                    {s.value}
+                  </div>
                   <div className="text-xs text-zinc-500 mt-1">{s.label}</div>
+                  {s.meta ? (
+                    <div className="text-[11px] text-zinc-600 mt-2 leading-snug">
+                      {s.meta}
+                    </div>
+                  ) : null}
                 </motion.div>
               ))}
             </div>
