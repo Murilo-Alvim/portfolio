@@ -65,6 +65,9 @@ type Dict = {
     previewAlt: (title: string) => string;
     repoAria: (title: string) => string;
     liveAria: (title: string) => string;
+    prevAria: string;
+    nextAria: string;
+    dotAria: (n: number) => string;
     items: { title: string; description: string }[];
   };
   contato: {
@@ -78,6 +81,7 @@ type Dict = {
   footer: {
     builtWith: string;
     coffeeAria: string;
+    backToTop: string;
   };
 };
 
@@ -192,6 +196,9 @@ const pt: Dict = {
     previewAlt: (t) => `Preview do projeto ${t}`,
     repoAria: (t) => `Repositório de ${t} no GitHub`,
     liveAria: (t) => `Demo ao vivo de ${t}`,
+    prevAria: "Projeto anterior",
+    nextAria: "Próximo projeto",
+    dotAria: (n) => `Ir para o projeto ${n}`,
     items: [
       {
         title: "ProcessMap",
@@ -208,6 +215,11 @@ const pt: Dict = {
         description:
           "Landing page institucional para profissional da área da saúde, com 8 seções (hero, sobre, especialidades, serviços, depoimentos, contato), formulário integrado via EmailJS e design responsivo mobile-first.",
       },
+      {
+        title: "Sabor & Arte",
+        description:
+          "Cardápio digital para restaurantes com seleção de pratos por categoria, carrinho integrado e finalização de pedido. Interface com tema claro/escuro, navegação fluida e experiência mobile-first.",
+      },
     ],
   },
   contato: {
@@ -222,6 +234,7 @@ const pt: Dict = {
   footer: {
     builtWith: "Construído com Next.js e muito",
     coffeeAria: "café",
+    backToTop: "Voltar ao topo",
   },
 };
 
@@ -336,6 +349,9 @@ const en: Dict = {
     previewAlt: (t) => `${t} project preview`,
     repoAria: (t) => `${t} repository on GitHub`,
     liveAria: (t) => `${t} live demo`,
+    prevAria: "Previous project",
+    nextAria: "Next project",
+    dotAria: (n) => `Go to project ${n}`,
     items: [
       {
         title: "ProcessMap",
@@ -352,6 +368,11 @@ const en: Dict = {
         description:
           "Institutional landing page for a healthcare professional, with 8 sections (hero, about, specialties, services, testimonials, contact), EmailJS-integrated form and mobile-first responsive design.",
       },
+      {
+        title: "Sabor & Arte",
+        description:
+          "Digital menu for restaurants with category-based dish selection, integrated cart and order checkout. Light/dark theme interface, smooth navigation and a mobile-first experience.",
+      },
     ],
   },
   contato: {
@@ -366,6 +387,7 @@ const en: Dict = {
   footer: {
     builtWith: "Built with Next.js and lots of",
     coffeeAria: "coffee",
+    backToTop: "Back to top",
   },
 };
 
