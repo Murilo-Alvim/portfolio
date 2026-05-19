@@ -50,7 +50,7 @@ const projectMeta = [
   {
     stack: ["Next.js", "TypeScript", "React", "TailwindCSS"],
     image: "/projects/sabor-arte.png",
-    repoUrl: "",
+    repoUrl: "https://github.com/Murilo-Alvim/Menu",
     liveUrl: "https://menu-delta-liard.vercel.app/",
   },
 ];
