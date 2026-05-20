@@ -12,6 +12,7 @@ export default function Navbar() {
   const links = [
     { href: "#sobre", label: t.nav.sobre },
     { href: "#competencias", label: t.nav.competencias },
+    { href: "#formacao", label: t.nav.formacao },
     { href: "#experiencia", label: t.nav.experiencia },
     { href: "#projetos", label: t.nav.projetos },
     { href: "#contato", label: t.nav.contato },

@@ -17,6 +17,7 @@ type Dict = {
     sobre: string;
     competencias: string;
     experiencia: string;
+    formacao: string;
     projetos: string;
     contato: string;
     cta: string;
@@ -64,6 +65,17 @@ type Dict = {
       highlights: string[];
     }[];
   };
+  formacao: {
+    tag: string;
+    title: string;
+    items: {
+      period: string;
+      degree: string;
+      institution: string;
+      description?: string;
+      skills?: string[];
+    }[];
+  };
   projetos: {
     tag: string;
     title: string;
@@ -95,6 +107,7 @@ const pt: Dict = {
     sobre: "Sobre",
     competencias: "Competências",
     experiencia: "Experiência",
+    formacao: "Formação",
     projetos: "Projetos",
     contato: "Contato",
     cta: "Vamos conversar",
@@ -204,6 +217,22 @@ const pt: Dict = {
       },
     ],
   },
+  formacao: {
+    tag: "# formação",
+    title: "Formação acadêmica",
+    items: [
+      {
+        period: "2024 - Dez/2027",
+        degree: "Bacharelado em Sistemas de Informação",
+        institution: "Universidade Santa Cecília (UNISANTA)",
+      },
+      {
+        period: "2019 - 2023",
+        degree: "Inglês como Segunda Língua (ESL)",
+        institution: "Cultura Inglesa",
+      },
+    ],
+  },
   projetos: {
     tag: "# projetos",
     title: "Projetos",
@@ -257,6 +286,7 @@ const en: Dict = {
     sobre: "About",
     competencias: "Skills",
     experiencia: "Experience",
+    formacao: "Education",
     projetos: "Projects",
     contato: "Contact",
     cta: "Let's talk",
@@ -363,6 +393,22 @@ const en: Dict = {
           "Developing communication and teamwork skills",
           "Hands-on experience with organizational processes",
         ],
+      },
+    ],
+  },
+  formacao: {
+    tag: "# education",
+    title: "Academic education",
+    items: [
+      {
+        period: "2024 - Dec/2027",
+        degree: "Bachelor's in Information Systems",
+        institution: "Universidade Santa Cecília (UNISANTA)",
+      },
+      {
+        period: "2019 - 2023",
+        degree: "English as a Second Language (ESL)",
+        institution: "Cultura Inglesa",
       },
     ],
   },
