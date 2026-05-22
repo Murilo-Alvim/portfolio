@@ -53,6 +53,20 @@ const projectMeta = [
     repoUrl: "https://github.com/Murilo-Alvim/Menu",
     liveUrl: "https://menu-delta-liard.vercel.app/",
   },
+  {
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Recharts",
+      "JWT",
+      "TailwindCSS",
+    ],
+    image: "/projects/paylytics.png",
+    repoUrl: "https://github.com/Murilo-Alvim/Paylytics",
+    liveUrl: "https://paylytics-murilo.vercel.app/",
+  },
 ];
 
 export default function Projetos() {

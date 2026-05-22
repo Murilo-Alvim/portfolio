@@ -263,6 +263,11 @@ const pt: Dict = {
         description:
           "Cardápio digital para restaurantes com seleção de pratos por categoria, carrinho integrado e finalização de pedido. Interface com tema claro/escuro, navegação fluida e experiência mobile-first.",
       },
+      {
+        title: "Paylytics",
+        description:
+          "Plataforma SaaS de analytics financeiro em tempo real que conecta gateways, bancos e adquirentes em um painel único. Inclui insights gerados por IA, métricas de aprovação, suporte multi-país e exportação para Excel — pensada para times fintech que precisam decidir rápido.",
+      },
     ],
   },
   contato: {
@@ -441,6 +446,11 @@ const en: Dict = {
         title: "Sabor & Arte",
         description:
           "Digital menu for restaurants with category-based dish selection, integrated cart and order checkout. Light/dark theme interface, smooth navigation and a mobile-first experience.",
+      },
+      {
+        title: "Paylytics",
+        description:
+          "Real-time financial analytics SaaS that connects gateways, banks and acquirers in a single dashboard. AI-generated insights, approval metrics, multi-country support and Excel export — built for fintech teams that need to decide fast.",
       },
     ],
   },
