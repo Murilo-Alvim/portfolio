@@ -20,8 +20,8 @@ const channels = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/murilo-alvim",
-    href: "https://www.linkedin.com/in/murilo-alvim-a49226313/",
+    value: "linkedin.com/in/murilo-francisco-alvim",
+    href: "https://www.linkedin.com/in/murilo-francisco-alvim-a49226313/",
   },
 ];
 

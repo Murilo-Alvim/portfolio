@@ -43,7 +43,7 @@ export default function Footer() {
             <Github size={15} />
           </a>
           <a
-            href="https://www.linkedin.com/in/murilo-alvim-a49226313/"
+            href="https://www.linkedin.com/in/murilo-francisco-alvim-a49226313/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 rounded-full border border-bg-border hover:border-brand-violet/60 flex items-center justify-center text-zinc-400 hover:text-zinc-100 transition-colors"

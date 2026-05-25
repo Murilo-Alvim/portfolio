@@ -110,7 +110,7 @@ export default function Hero() {
               <Github size={18} />
             </a>
             <a
-              href="https://www.linkedin.com/in/murilo-alvim-a49226313/"
+              href="https://www.linkedin.com/in/murilo-francisco-alvim-a49226313/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full glass flex items-center justify-center text-zinc-300 hover:text-white hover:border-brand-violet/60 transition-colors"
