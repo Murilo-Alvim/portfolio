@@ -83,14 +83,19 @@ export default function Sobre() {
                   <span className="text-zinc-100 font-medium">
                     UNISANTA — Universidade Santa Cecília
                   </span>
-                  . Atuo como{" "}
+. Atuo como{" "}
                   <span className="text-zinc-100 font-medium">
-                    Jovem Aprendiz no Hospital Sírio-Libanês
+                    Estagiário de Salesforce Marketing Cloud Next na Gentrop
+                  </span>
+                  , onde apoio a criação e a automação de jornadas de marketing
+                  e o desenvolvimento de soluções orientadas a dados. Antes,
+                  passei pelo{" "}
+                  <span className="text-zinc-100 font-medium">
+                    Hospital Sírio-Libanês como Jovem Aprendiz
                   </span>
                   , uma das instituições de saúde mais reconhecidas do país,
-                  onde vivencio diariamente um ambiente corporativo exigente,
-                  dinâmico e que demanda postura profissional desde o primeiro
-                  dia.
+                  onde vivenciei um ambiente corporativo exigente, dinâmico e
+                  que demanda postura profissional desde o primeiro dia.
                 </p>
 
                 <p>
@@ -128,14 +133,19 @@ export default function Sobre() {
                   <span className="text-zinc-100 font-medium">
                     UNISANTA — Universidade Santa Cecília
                   </span>
-                  . I work as a{" "}
+. I work as a{" "}
                   <span className="text-zinc-100 font-medium">
-                    Young Apprentice at Hospital Sírio-Libanês
+                    Salesforce Marketing Cloud Next Intern at Gentrop
+                  </span>
+                  , where I support the creation and automation of marketing
+                  journeys and the building of data-driven solutions.
+                  Previously, I worked at{" "}
+                  <span className="text-zinc-100 font-medium">
+                    Hospital Sírio-Libanês as a Young Apprentice
                   </span>
                   , one of the most respected healthcare institutions in the
-                  country, where I experience daily a demanding, dynamic
-                  corporate environment that calls for professionalism from
-                  day one.
+                  country, where I experienced a demanding, dynamic corporate
+                  environment that calls for professionalism from day one.
                 </p>
 
                 <p>
