@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Sparkles } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 
-const icons = [GraduationCap, Briefcase, Sparkles];
+const icons = [GraduationCap, Briefcase, Briefcase, Sparkles];
 
 export default function Sobre() {
   const { lang, t } = useLanguage();
@@ -160,7 +160,7 @@ export default function Sobre() {
               </>
             )}
 
-            <div className="grid sm:grid-cols-3 gap-4 pt-6">
+            <div className="grid sm:grid-cols-2 gap-4 pt-6">
               {stats.map((s, i) => (
                 <motion.div
                   key={s.label}

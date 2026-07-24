@@ -136,9 +136,14 @@ const pt: Dict = {
         meta: "2024-Cursando · Previsão: Dez/2027 · 6º semestre",
       },
       {
+        value: "Estagiário Salesforce Marketing Cloud Next",
+        label: "Gentrop",
+        meta: "07/2026 · Atual",
+      },
+      {
         value: "Jovem Aprendiz",
         label: "Hospital Sírio-Libanês",
-        meta: "09/2025 · Atual",
+        meta: "09/2025 · 07/2026",
       },
       {
         value: "Mindset",
@@ -333,9 +338,14 @@ const en: Dict = {
         meta: "2024-Present · Expected: Dec/2027 · 6th semester",
       },
       {
+        value: "Salesforce Marketing Cloud Next Intern",
+        label: "Gentrop",
+        meta: "07/2026 · Present",
+      },
+      {
         value: "Young Apprentice",
         label: "Hospital Sírio-Libanês",
-        meta: "09/2025 · Present",
+        meta: "09/2025 · 07/2026",
       },
       {
         value: "Mindset",
