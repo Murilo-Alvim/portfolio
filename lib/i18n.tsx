@@ -203,10 +203,23 @@ const pt: Dict = {
     current: "Atual",
     jobs: [
       {
-        role: "Jovem Aprendiz",
-        company: "Hospital Sírio-Libanês",
+        role: "Estagiário Salesforce Marketing Cloud Next",
+        company: "Gentrop",
         location: "São Paulo, SP",
         period: "Atual",
+        description:
+          "Atuando com a plataforma Salesforce Marketing Cloud Next, apoiando a criação e a automação de jornadas de marketing e o desenvolvimento de soluções orientadas a dados.",
+        highlights: [
+          "Trabalho prático com Salesforce Marketing Cloud Next",
+          "Automação de jornadas e campanhas de marketing",
+          "Aprendizado contínuo em plataforma cloud e estratégias data-driven",
+        ],
+      },
+      {
+        role: "Jovem Aprendiz - Contas a Receber/Cobrança",
+        company: "Hospital Sírio-Libanês",
+        location: "São Paulo, SP",
+        period: "Set/2025 - Jul/2026",
         description:
           "Atuando em uma das instituições de saúde mais reconhecidas do Brasil, desenvolvendo competências profissionais e contribuindo com rotinas administrativas e operacionais.",
         highlights: [
@@ -387,10 +400,23 @@ const en: Dict = {
     current: "Current",
     jobs: [
       {
-        role: "Young Apprentice",
-        company: "Hospital Sírio-Libanês",
+        role: "Salesforce Marketing Cloud Next Intern",
+        company: "Gentrop",
         location: "São Paulo, SP",
         period: "Current",
+        description:
+          "Working with the Salesforce Marketing Cloud Next platform, supporting the creation and automation of marketing journeys and building data-driven solutions.",
+        highlights: [
+          "Hands-on work with Salesforce Marketing Cloud Next",
+          "Automation of marketing journeys and campaigns",
+          "Continuous learning in cloud platform and data-driven strategies",
+        ],
+      },
+      {
+        role: "Young Apprentice - Accounts Receivable/Collections",
+        company: "Hospital Sírio-Libanês",
+        location: "São Paulo, SP",
+        period: "Sep/2025 - Jul/2026",
         description:
           "Working at one of the most respected healthcare institutions in Brazil, developing professional skills and contributing to administrative and operational routines.",
         highlights: [
